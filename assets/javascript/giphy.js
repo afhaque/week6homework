@@ -13,6 +13,8 @@ var birds = ['HAWK', 'EAGLE', 'PIGEON', 'DOVE', 'FALCON'];
 
 	// Loop through birds array
 	for (var i = 0; i < birds.length; i++) {
+
+			birds[i];
 		
 		// Create buttons
 		var birdButton = $("<button id="+birds[i]+">"+birds[i]+"</button>");
@@ -24,7 +26,7 @@ var birds = ['HAWK', 'EAGLE', 'PIGEON', 'DOVE', 'FALCON'];
 };
 
 //QUERY URL TO PULL FROM THE GIPHY API
-var queryURL = "http://api.giphy.com/v1/gifs/search?q=" + birds + "&api_key=dc6zaTOxFJmzC ";
+var queryURL = "http://api.giphy.com/v1/gifs/search?q=" + birds + "&rating&api_key=dc6zaTOxFJmzC ";
 	//Q - QUERY (SEARCH TERM), LIMIT - SHOULD BE 10 TO SHOW 10 GIFS PER BUTTON, RATING - SHOWS THE RATING OF THE GIF
 
 //================== FUNCTIONS =======================
@@ -34,10 +36,10 @@ $.ajax({url: queryURL, method: 'GET'})
 
  .done(function(response) {
 
- 	console.log(response)
+ 	console.log(response) //<---This is showing an array in console, however it doesn't have any specific data
 
  	birdButton.on('click',function(){
- 	console.log(birdButton[0])
+ 	alert(birds[i])
 
 
  	});
